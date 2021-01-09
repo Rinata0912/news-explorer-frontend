@@ -4,6 +4,7 @@ import { Header } from '../Header/Header';
 import { Search } from '../Search/Search';
 import { AboutAuthor } from '../AboutAuthor/AboutAuthor';
 import { Footer } from '../Footer/Footer';
+import { NewsCard } from '../NewsCard/NewsCard';
 
 function App() {
   return (
