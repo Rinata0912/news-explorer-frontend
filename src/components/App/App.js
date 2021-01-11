@@ -1,21 +1,25 @@
 import './App.css';
 import { PopupWithForm } from '../PopupWithForm/PopupWithForm';
 import { Header } from '../Header/Header';
-import { Search } from '../Search/Search';
-import { AboutAuthor } from '../AboutAuthor/AboutAuthor';
+import { Main } from '../Main/Main';
+import { Switch, Route } from 'react-router-dom';
+import { SavedNews } from '../SavedNews/SavedNews';
 import { Footer } from '../Footer/Footer';
-import { NewsCardList } from "../NewsCardList/NewsCardList";
-import { cardList } from '../../utils/cardList';
 
 function App() {
   return (
     <div className="App">
       <PopupWithForm/>
       <Header/>
-      <Search/>
-      <NewsCardList cardList={cardList}/>
-      <AboutAuthor/>
-      <Footer/>
+      <Switch>
+        <Route path="/main">
+          <Main />
+        </Route>
+        <Route path="/saved-news">
+          <SavedNews/>
+        </Route>
+      </Switch>
+      <Footer />
     </div>
   );
 }
