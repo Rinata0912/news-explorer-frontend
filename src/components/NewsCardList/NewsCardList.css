@@ -1,0 +1,11 @@
+.newsCardList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1232px;
+  background-color: #F5F6F7;
+}
+
+.newsCardList__item {
+  display: flex;
+}

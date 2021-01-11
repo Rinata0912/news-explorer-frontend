@@ -2,9 +2,12 @@
   max-width: 400px;
   width: 100%;
   position: relative;
-  margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
+  height: 579px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
 }
 
 .newsCard__save {
@@ -27,6 +30,9 @@
 
 .newsCard__content {
   padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .newsCard__date {
@@ -47,6 +53,11 @@
   font-style: normal;
   color: #1A1B22;
   margin: 0 0 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .newsCard__description {
@@ -57,6 +68,11 @@
   font-style: normal;
   color: #1A1B22;
   margin: 0 0 18px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
 }
 
 .newsCard__source {
@@ -68,4 +84,5 @@
   text-transform: uppercase;
   font-style: normal;
   color: #B6BCBF;
+  margin-top: auto;
 }

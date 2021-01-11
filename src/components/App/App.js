@@ -4,7 +4,8 @@ import { Header } from '../Header/Header';
 import { Search } from '../Search/Search';
 import { AboutAuthor } from '../AboutAuthor/AboutAuthor';
 import { Footer } from '../Footer/Footer';
-import { NewsCard } from '../NewsCard/NewsCard';
+import { NewsCardList } from "../NewsCardList/NewsCardList";
+import { cardList } from '../../utils/cardList';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <PopupWithForm/>
       <Header/>
       <Search/>
+      <NewsCardList cardList={cardList}/>
       <AboutAuthor/>
       <Footer/>
     </div>
