@@ -1,0 +1,17 @@
+.navigation {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.navigation__item {
+  margin-right: 37px;
+}
+
+.navigation__link {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  text-decoration: none;
+}

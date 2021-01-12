@@ -1,5 +1,7 @@
 import './Header.css';
 import { ReactComponent as Logout} from '../../images/logout.svg';
+import { Navigation } from '../Navigation/Navigation';
+import { HEADER_NAVIGATION } from '../../utils/constants';
 
 export function Header({ isLogin }) {
   return (
@@ -7,10 +9,7 @@ export function Header({ isLogin }) {
       <div className="header__container">
         <a href="/" className="header__title">NewsExplorer</a>
         <div className="header__content">
-          <ul className="header__navigation">
-            <li className="header__navigation-item">123123123</li>
-            <li className="header__navigation-item">123123</li>
-          </ul>
+          <Navigation items={HEADER_NAVIGATION}/>
           <button className="header__button">{isLogin ? <Logout/> : 'Авторизоваться'}</button>
         </div>
       </div>
