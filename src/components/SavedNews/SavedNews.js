@@ -1,7 +1,10 @@
+import { SavedNewsHeader } from '../SavedNewsHeader/SavedNewsHeader';
 import './SavedNews.css';
 
 export function SavedNews() {
   return (
-    <div></div>
+    <div className="savedNews">
+      <SavedNewsHeader />
+    </div>
   );
 }
