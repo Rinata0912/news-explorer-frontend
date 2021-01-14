@@ -1,6 +1,5 @@
 import './App.css';
 import { PopupWithForm } from '../PopupWithForm/PopupWithForm';
-import { Header } from '../Header/Header';
 import { Main } from '../Main/Main';
 import { Switch, Route } from 'react-router-dom';
 import { SavedNews } from '../SavedNews/SavedNews';
@@ -10,7 +9,6 @@ function App() {
   return (
     <div className="App">
       <PopupWithForm/>
-      <Header/>
       <Switch>
         <Route path="/main">
           <Main />

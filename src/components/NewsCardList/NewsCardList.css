@@ -4,6 +4,7 @@
   gap: 16px;
   max-width: 1232px;
   background-color: #F5F6F7;
+  margin: 0 auto
 }
 
 .newsCardList__item {

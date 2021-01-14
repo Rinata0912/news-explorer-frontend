@@ -1,3 +1,8 @@
 .savedNews {
   background-color: #fff;
 }
+
+.savedNews__cardlist {
+  padding: 62px 0;
+  background-color: #F5F6F7;
+}
