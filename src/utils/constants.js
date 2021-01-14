@@ -16,7 +16,7 @@ const FOOTER_NAVIGATION = [
   },
   {
     name: 'Яндекс.Практикум',
-    path: 'https://praktikum.yandex.ru/',
+    href: 'https://praktikum.yandex.ru/',
   },
 ];
 const DARK_COLOR = '#1A1B22';
