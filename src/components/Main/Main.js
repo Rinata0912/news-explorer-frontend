@@ -7,7 +7,7 @@ export function Main() {
   return (
     <>
       <div className="main__banner">
-        <Header />
+        <Header theme="light"/>
         <Search />
       </div>
       

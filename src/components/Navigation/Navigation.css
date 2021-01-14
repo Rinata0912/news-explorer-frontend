@@ -2,10 +2,13 @@
   list-style: none;
   display: flex;
   padding: 0;
+  margin: 0;
 }
 
 .navigation__item {
   margin-right: 37px;
+  /*  */
+  display: flex;
 }
 
 .navigation__link {
@@ -14,5 +17,23 @@
   font-size: 18px;
   line-height: 24px;
   text-decoration: none;
-  color: inherit;
+  /*  */
+  display: flex;
+  align-items: center;
+}
+
+.navigation__link_theme_light {
+  color: #fff;
+}
+
+.navigation__link_theme_dark {
+  color: #1A1B22;
+}
+
+.navigation__link_state_active-light {
+  border-bottom: 3px solid #fff;
+}
+
+.navigation__link_state_active-dark {
+  border-bottom: 3px solid #1A1B22;
 }

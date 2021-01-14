@@ -10,11 +10,11 @@ function App() {
     <div className="App">
       <PopupWithForm/>
       <Switch>
-        <Route path="/main">
+        <Route exact path="/">
           <Main />
         </Route>
-        <Route path="/saved-news">
-          <SavedNews/>
+        <Route exact path="/saved-news">
+          <SavedNews />
         </Route>
       </Switch>
       <Footer />
