@@ -4,7 +4,7 @@ import { ReactComponent as Save } from '../../images/bookmark.svg';
 export function NewsCard({ image, date, title, description, source }) {
   return (
     <div className="newsCard">
-      <button className="newsCard__save"><Save/></button>
+      <button className="newsCard__save"><Save className="newsCard__save-icon" /></button>
       <img className="newsCard__image" src={image} alt="картинка"/>
       <div className="newsCard__content">
         <div className="newsCard__date">{date}</div>

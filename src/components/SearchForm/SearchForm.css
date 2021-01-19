@@ -29,4 +29,9 @@
   font-style: normal;
   color: #fff;
   cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+.searchForm__button:hover {
+  background-color: #347EFF;
 }

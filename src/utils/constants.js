@@ -1,3 +1,6 @@
+import { ReactComponent as Github } from '../images/github.svg';
+import { ReactComponent as Facebook } from '../images/fb.svg';
+
 const HEADER_NAVIGATION = ['Главная'];
 const HEADER_NAVIGATION_AUTHORIZED = [
   {
@@ -17,6 +20,14 @@ const FOOTER_NAVIGATION = [
   {
     name: 'Яндекс.Практикум',
     href: 'https://praktikum.yandex.ru/',
+  },
+  {
+    name: <Github />,
+    href: 'https://github.com/Rinata0912',
+  },
+  {
+    name: <Facebook />,
+    href: 'https://www.facebook.com/',
   },
 ];
 const DARK_COLOR = '#1A1B22';

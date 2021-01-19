@@ -17,7 +17,8 @@ export function Navigation({ items, highlightActiveLink, theme }) {
             </NavLink>
               : <a 
               href={item.href}
-              target="blank"
+              target="_blank"
+              rel="noreferrer"
               className={`navigation__link navigation__link_theme_${theme}`}
               activeClassName={highlightActiveLink ? `navigation__link_state_active-${theme}` : ''}>
                 {item.name}
