@@ -21,17 +21,17 @@ export function LoginPopup({ onClose, isOpen }) {
       onClose={onClose}
       isOpen={isOpen}
     >
-      <form className="loginPopup__form" noValidate>
-          <fieldset className="loginPopup__inputList">
-            <label className="loginPopup__label">
-            Email<input className="loginPopup__input" type="email" placeholder="Введите почту" minLength="2" maxLength="30" required></input>
+      <form className="login__form" noValidate>
+          <fieldset className="login__inputList">
+            <label className="login__label">
+            Email<input className="login__input" type="email" placeholder="Введите почту" minLength="2" maxLength="30" required></input>
             </label>
-            <label className="loginPopup__label">
-            Пароль<input className="loginPopup__input" type="password" placeholder="Введите пароль" minLength="8" maxLength="30" required></input>
+            <label className="login__label">
+            Пароль<input className="login__input" type="password" placeholder="Введите пароль" minLength="8" maxLength="30" required></input>
             </label>
           </fieldset>
-          <button className="loginPopup__button">Войти</button>
-          <div className="loginPopup__or">или <button onClick={handleSignUp} className="loginPopup__or-button">Зарегистрироваться</button></div>
+          <button className="login__button">Войти</button>
+          <div className="login__or">или <button onClick={handleSignUp} className="login__or-button">Зарегистрироваться</button></div>
       </form>
       
     </PopupWithForm>

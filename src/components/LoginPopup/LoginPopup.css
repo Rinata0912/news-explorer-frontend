@@ -1,11 +1,11 @@
-.loginPopup__inputList {
+.login__inputList {
   display: flex;
   padding: 22px 0 43px;
   border: 0;
   flex-direction: column;
 }
 
-.loginPopup__label {
+.login__label {
   margin-bottom: 16px;
   font-family: 'Inter';
   font-size: 12px;
@@ -15,11 +15,11 @@
   color: #2F71E5;
 }
 
-.loginPopup__label:last-child {
+.login__label:last-child {
   margin-bottom: 0;
 }
 
-.loginPopup__input {
+.login__input {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   margin-top: 9px;
@@ -34,7 +34,16 @@
   color: #000;
 }
 
-.loginPopup__button {
+.login__input::placeholder {
+  font-family: 'Inter';
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  font-style: normal;
+  color:rgba(0, 0, 0, .2);
+}
+
+.login__button {
   border: none;
   padding: 20px 0;
   max-width: 100%;
@@ -49,7 +58,7 @@
   cursor: pointer;
 }
 
-.loginPopup__or {
+.login__or {
   font-family: 'Inter', Arial, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -59,7 +68,7 @@
   text-align: center;
 }
 
-.loginPopup__or-button {
+.login__or-button {
   text-decoration: none;
   color: #2F71E5;
   padding: 0;
