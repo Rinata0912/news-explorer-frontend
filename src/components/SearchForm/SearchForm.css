@@ -18,6 +18,14 @@
   color: #1A1B22;
 }
 
+.searchForm__input::placeholder {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  font-style: normal;
+  color: #B6BCBF;
+}
+
 .searchForm__button {
   padding: 20px 53px;
   border: none;
