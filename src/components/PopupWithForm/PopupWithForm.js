@@ -1,17 +1,17 @@
 import './PopupWithForm.css';
 import { ReactComponent as Close } from '../../images/close.svg';
+import { useClosePopup } from '../../utils/useClosePopup';
 
-export function PopupWithForm({ title, button, children }) {
+export function PopupWithForm({ title, children, onClose, isOpen }) {
+
+  const handleOnClose = useClosePopup({ onClose, isOpen });
+
   return (
-    <div className="popupWithForm">
+    <div className="popupWithForm" onClick={handleOnClose}>
       <div className="popupWithForm__container">
-        <button className="popupWithForm__close"><Close className="popupWithForm__close-icon"/></button>
-        <h3 className="popupWithForm__title">dfhgdfg</h3>
-        <form className="popupWithForm__form">
-          {children}
-          <button className="popupWithForm__button">Войти</button>
-          <div className="popupWithForm__or">или <a href="/" className="popupWithForm__link">Зарегистрироваться</a></div>
-        </form>
+        <button className="popupWithForm__close"><Close onClick={handleOnClose} className="popupWithForm__close-icon"/></button>
+        <h3 className="popupWithForm__title">{title}</h3>
+        {children}
       </div>
     </div>
   );

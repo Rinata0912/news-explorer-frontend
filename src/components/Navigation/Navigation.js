@@ -7,7 +7,8 @@ export function Navigation({ items, highlightActiveLink, theme }) {
       {
         items.map((item) => {
           return <li className="navigation__item">
-            {item.path ? <NavLink 
+            {item.path 
+            ? <NavLink 
               exact
               to={item.path}
               className={`navigation__link navigation__link_theme_${theme}`}
