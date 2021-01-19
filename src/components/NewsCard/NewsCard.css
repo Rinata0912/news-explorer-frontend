@@ -83,7 +83,7 @@
   font-weight: 400;
   font-style: normal;
   color: #1A1B22;
-  margin: 0 0 18px;
+  margin: 0;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -95,10 +95,36 @@
   font-family: 'Roboto Slab';
   font-size: 16px;
   line-height: 20px;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   font-style: normal;
   color: #B6BCBF;
   margin-top: auto;
+}
+
+@media (max-width: 1439px) {
+  .newsCard {
+    max-width: 224px;
+    height: 420px;
+  }
+
+  .newsCard__content {
+    padding: 16px;
+  }
+
+  .newsCard__save {
+    top: 8px;
+    right: 8px;
+  }
+
+  .newsCard__image {
+    max-height: 150px;
+  }
+
+  .newsCard__title {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 0 0 10px;
+  }
 }

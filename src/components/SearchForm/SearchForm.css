@@ -43,3 +43,9 @@
 .searchForm__button:hover {
   background-color: #347EFF;
 }
+
+@media (max-width: 1439px) {
+  .searchForm__button {
+    padding: 16px 50px;
+  }
+}
