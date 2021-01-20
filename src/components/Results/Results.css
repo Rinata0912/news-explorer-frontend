@@ -7,6 +7,8 @@
   max-width: 1232px;
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .results__title {
@@ -21,4 +23,16 @@
 
 .results__news {
   margin-bottom: 64px;
+}
+
+@media (max-width: 1439px) {
+  .results__container {
+    max-width: 688px;
+  }
+}
+
+@media (max-width: 767px) {
+  .results__container {
+    max-width: 288px;
+  }
 }

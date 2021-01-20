@@ -26,11 +26,42 @@
   border-color: #1A1B22;
 }
 
+.button_theme_form {
+  border: none;
+  padding: 20px 53px;
+  background-color: #2F71E5;
+  color: #fff;
+}
+
+.button_theme_form:hover {
+  background-color: #347EFF;
+}
+
+.button_theme_normal {
+  color: #1A1B22;
+  border: none;
+  background-color: #fff;
+  transition: opacity .2s ease;
+  padding: 18px 84px 21px;
+}
+
+.button_theme_normal:hover {
+  opacity: .9;
+}
+
 @media (max-width: 1439px) {
   .button {
     padding: 8px 12px;
     font-size: 16px;
     line-height: 24px;
+  }
+
+  .button_theme_form {
+    padding: 16px 50px;
+  }
+
+  .button_theme_normal {
+    padding: 15px 60px 17px;
   }
 }
 

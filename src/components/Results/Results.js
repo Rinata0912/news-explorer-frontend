@@ -1,6 +1,7 @@
 import './Results.css';
 import { NewsCardList } from '../NewsCardList/NewsCardList';
 import { cardList } from '../../utils/cardList';
+import { Button } from '../Button/Button';
 
 export function Results() {
   return (
@@ -10,6 +11,7 @@ export function Results() {
         <div className="results__news">
           <NewsCardList cardList={cardList} />
         </div>
+        <Button theme="normal" value="Показать еще" />
       </div>
     </div>
   );

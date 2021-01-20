@@ -6,6 +6,7 @@ import { useContext, useState } from 'react';
 import { PopupContext } from '../../contexts/PopupContext';
 import { ReactComponent as Menu } from '../../images/menu.svg';
 import { ReactComponent as Close } from '../../images/close.svg';
+import { Button } from '../Button/Button';
 
 const IS_MOBILE = window.innerWidth < 768;
 
@@ -45,7 +46,8 @@ export function Header({ isLogin, theme }) {
             }
             <div className={`header__navigation ${!isCollapsed ? 'header__navigation_visible' : ''} header__navigation_theme_${theme}`}>
               <Navigation items={HEADER_NAVIGATION_AUTHORIZED} theme={theme} highlightActiveLink />
-              <button onClick={clickButton} className={`header__button header__button_theme_${theme}`}>{isLogin ? <Logout/> : 'Авторизоваться'}</button>
+              {/* <button onClick={clickButton} className={`header__button header__button_theme_${theme}`}>{isLogin ? <Logout/> : 'Авторизоваться'}</button> */}
+              <Button onClick={clickButton} theme={theme} value={isLogin ? <Logout/> : 'Авторизоваться'}/>
             </div>
           </div>
         </div>
