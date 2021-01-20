@@ -1,7 +1,7 @@
-import './AboutAuthor.css';
+import './About.css';
 import avatar from '../../images/avatar.jpg';
 
-export function AboutAuthor() {
+export function About() {
   return (
     <div className="aboutAuthor">
       <div className="aboutAuthor__container">

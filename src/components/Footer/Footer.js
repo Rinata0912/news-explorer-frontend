@@ -12,8 +12,8 @@ export function Footer() {
         <div className="footer__content">
           <Navigation items={FOOTER_NAVIGATION} theme="dark" />
           <ul className="footer__social-list">
-          <li className="footer__social-item"><a className="footer__social-link" href="/"><Github/></a></li>
-          <li className="footer__social-item"><a className="footer__social-link" href="/"><Facebook/></a></li>
+          <li className="footer__social-item"><a className="footer__social-link" href="https://github.com/Rinata0912" target="_blank" rel="noreferrer"><Github/></a></li>
+          <li className="footer__social-item"><a className="footer__social-link" href="https://www.facebook.com/" target="_blank" rel="noreferrer"><Facebook/></a></li>
         </ul>
         </div>
       </div>

@@ -1,9 +1,9 @@
-import './LoginPopup.css';
+import './Login.css';
 import { PopupWithForm } from '../PopupWithForm/PopupWithForm';
 import { PopupContext } from '../../contexts/PopupContext';
 import { useContext } from 'react';
 
-export function LoginPopup({ onClose, isOpen }) {
+export function Login({ onClose, isOpen }) {
   const { handleOpenRegisterPopup, handleCloseAllPopups } = useContext(PopupContext);
 
   const handleSignUp = (evt) => {

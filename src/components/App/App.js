@@ -1,12 +1,11 @@
-import './App.css';
 import { Main } from '../Main/Main';
 import { Switch, Route } from 'react-router-dom';
 import { SavedNews } from '../SavedNews/SavedNews';
 import { Footer } from '../Footer/Footer';
 import { useState, useCallback } from 'react';
 import { PopupContext } from '../../contexts/PopupContext';
-import { LoginPopup } from '../LoginPopup/LoginPopup';
-import { RegisterPopup } from '../RegisterPopup/RegisterPopup';
+import { Login } from '../Login/Login';
+import { Register } from '../Register/Register';
 
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
@@ -51,11 +50,11 @@ function App() {
         <Footer />
 
         {
-          isLoginPopupOpen && <LoginPopup onClose={handleCloseAllPopups} isOpen={isLoginPopupOpen} />
+          isLoginPopupOpen && <Login onClose={handleCloseAllPopups} isOpen={isLoginPopupOpen} />
         }
 
         {
-          isRegisterPopupOpen && <RegisterPopup onClose={handleCloseAllPopups} isOpen={isRegisterPopupOpen} />
+          isRegisterPopupOpen && <Register onClose={handleCloseAllPopups} isOpen={isRegisterPopupOpen} />
         }
       </div>
     </PopupContext.Provider>
