@@ -60,3 +60,25 @@
     width: 100%;
   }
 }
+
+@media (max-width: 1439px) {
+  .aboutAuthor {
+    padding: 32px 24px 80px;
+  }
+
+  .aboutAuthor__container {
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .aboutAuthor__avatar {
+    width: 232px;
+    margin-bottom: 24px;
+  }
+
+  .aboutAuthor__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 16px;
+  }
+}

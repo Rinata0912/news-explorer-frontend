@@ -128,3 +128,27 @@
     margin: 0 0 10px;
   }
 }
+
+@media (max-width: 1439px) {
+  .newsCard {
+    max-width: 288px;
+    height: 430px;
+  }
+
+  .newsCard__image {
+    max-height: 196px;
+  }
+
+  .newsCard__save {
+    top: 16px;
+    right: 16px;
+  }
+
+  .newsCard__date {
+    margin-bottom: 10px;
+  }
+
+  .newsCard__title {
+    line-height: 28px;
+  }
+}

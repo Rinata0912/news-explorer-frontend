@@ -11,8 +11,6 @@
 .popupWithForm__container {
   max-width: 430px;
   width: 100%;
-  /* height: 100%;
-  max-height: 380px; */
   margin: auto;
   padding: 34px 36px 28px;
   box-sizing: border-box;
@@ -41,4 +39,32 @@
   right: -40px;
   background: none;
   cursor: pointer;
+}
+
+.popupWithForm__close-icon {
+  fill: #fff;
+}
+
+@media (max-width: 767px) {
+  .popupWithForm__close {
+    right: 22px;
+    top: -50px;
+  }
+
+  .popupWithForm__close-icon {
+    fill: #fff;
+    width: 24px;
+  }
+
+  .popupWithForm__container {
+    max-width: 100%;
+    width: 100%;
+    padding: 16px 17px;
+    height: calc(100% - 56px);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+  }
 }

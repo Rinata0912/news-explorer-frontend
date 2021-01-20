@@ -17,3 +17,11 @@
     max-width: 688px;
   }
 }
+
+@media (max-width: 767px) {
+  .newsCardList {
+    gap: 9px;
+    max-width: 288px;
+    grid-template-columns: 1fr;
+  }
+}

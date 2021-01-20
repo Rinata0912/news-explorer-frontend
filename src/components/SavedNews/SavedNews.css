@@ -12,3 +12,9 @@
     padding: 32px 40px;
   }
 }
+
+@media (max-width: 767px) {
+  .savedNews__cardlist {
+    padding: 24px 16px;
+  }
+}

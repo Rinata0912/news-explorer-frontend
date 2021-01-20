@@ -50,3 +50,22 @@
     margin-right: 16px;
   }
 }
+
+
+@media (max-width: 767px) {
+  .navigation {
+    flex-direction: column;
+  }
+
+  .navigation__item {
+    margin: 0 0 34px;
+  }
+
+  .navigation__link_state_active-light {
+    border-bottom: none;
+  }
+  
+  .navigation__link_state_active-dark {
+    border-bottom: none;
+  }
+}

@@ -16,6 +16,7 @@
   font-weight: 400;
   font-style: normal;
   color: #1A1B22;
+  box-sizing: border-box;
 }
 
 .searchForm__input::placeholder {
@@ -47,5 +48,29 @@
 @media (max-width: 1439px) {
   .searchForm__button {
     padding: 16px 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .searchForm {
+    border-radius: 0;
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .searchForm__input {
+    margin: 0;
+    padding: 17px;
+    margin-bottom: 16px;
+  }
+
+  .searchForm__button {
+    padding: 17px;
+    max-width: 100%;
+    width: 100%;
   }
 }
