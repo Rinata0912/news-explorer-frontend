@@ -1,0 +1,43 @@
+.button {
+  border-width: 1px;
+  border-radius: 100px;
+  padding: 12px 15px;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  align-self: center;
+  transition: opacity .2s ease;
+}
+
+.button:hover {
+  opacity: .4;
+}
+
+.button_theme_light {
+  color: #fff;
+  border-color: #fff;
+}
+
+.button_theme_dark {
+  color: #1A1B22;
+  border-color: #1A1B22;
+}
+
+@media (max-width: 1439px) {
+  .button {
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .button {
+    max-width: 100%;
+    width: 100%;
+    padding: 17px 0;
+  }
+}
