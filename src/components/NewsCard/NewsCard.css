@@ -23,6 +23,20 @@
   cursor: pointer;
 }
 
+.newsCard__keyword {
+  color: #000;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  font-style: normal;
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
 .newsCard__save_active .newsCard__save-icon {
   stroke: #2F71E5;
   fill: #2F71E5;

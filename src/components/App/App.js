@@ -6,10 +6,12 @@ import { useState, useCallback } from 'react';
 import { PopupContext } from '../../contexts/PopupContext';
 import { Login } from '../Login/Login';
 import { Register } from '../Register/Register';
+import { Success } from '../Success/Success';
 
 function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
+  const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
 
   const handleOpenLoginPopup = useCallback(() => {
     setIsLoginPopupOpen(true);
@@ -19,14 +21,20 @@ function App() {
     setIsRegisterPopupOpen(true);
   }, []);
 
+  const handleOpenSuccessPopup = useCallback(() => {
+    setIsSuccessPopupOpen(true);
+  }, []);
+
   const handleCloseAllPopups = useCallback(() => {
     setIsLoginPopupOpen(false);
     setIsRegisterPopupOpen(false);
+    setIsSuccessPopupOpen(false);
   }, []);
 
   const popupContext = {
     handleOpenLoginPopup,
     handleOpenRegisterPopup,
+    handleOpenSuccessPopup,
     handleCloseAllPopups,
     isLoginPopupOpen,
     isRegisterPopupOpen,
@@ -55,6 +63,10 @@ function App() {
 
         {
           isRegisterPopupOpen && <Register onClose={handleCloseAllPopups} isOpen={isRegisterPopupOpen} />
+        }
+
+        {
+          isSuccessPopupOpen && <Success onClose={handleCloseAllPopups} isOpen={isRegisterPopupOpen} />
         }
       </div>
     </PopupContext.Provider>

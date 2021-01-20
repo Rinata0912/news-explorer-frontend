@@ -26,12 +26,20 @@
 }
 
 @media (max-width: 1439px) {
+  .results {
+    padding: 40px;
+  }
+
   .results__container {
     max-width: 688px;
   }
 }
 
 @media (max-width: 767px) {
+  .results {
+    padding: 32px 16px;
+  }
+
   .results__container {
     max-width: 288px;
   }

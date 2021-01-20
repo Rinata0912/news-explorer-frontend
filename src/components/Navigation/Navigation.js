@@ -6,7 +6,7 @@ export function Navigation({ items, highlightActiveLink, theme }) {
     <ul className="navigation">
       {
         items.map((item) => {
-          return <li className="navigation__item">
+          return <li className="navigation__item" key={item.name}>
             {item.path 
             ? <NavLink 
               exact
@@ -19,8 +19,7 @@ export function Navigation({ items, highlightActiveLink, theme }) {
               href={item.href}
               target="_blank"
               rel="noreferrer"
-              className={`navigation__link navigation__link_theme_${theme}`}
-              activeClassName={highlightActiveLink ? `navigation__link_state_active-${theme}` : ''}>
+              className={`navigation__link navigation__link_theme_${theme}`}>
                 {item.name}
             </a>
             }

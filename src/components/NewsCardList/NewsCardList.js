@@ -6,7 +6,7 @@ export function NewsCardList({ cardList }) {
     <div className="newsCardList">
       {
         cardList.map((card) => {
-          return <NewsCard image={card.image} date={card.date} title={card.title} description={card.description} source={card.source} />
+          return <NewsCard key={card.image} image={card.image} date={card.date} title={card.title} description={card.description} source={card.source} keyword={card.keyword} />
         })
       }
     </div>

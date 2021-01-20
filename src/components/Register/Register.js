@@ -4,13 +4,20 @@ import { PopupContext } from '../../contexts/PopupContext';
 import { useContext } from 'react';
 
 export function Register({ onClose, isOpen }) {
-  const { handleOpenLoginPopup, handleCloseAllPopups } = useContext(PopupContext);
+  const { handleOpenLoginPopup, handleCloseAllPopups, handleOpenSuccessPopup } = useContext(PopupContext);
 
   const handleSignIn = (evt) => {
     evt.preventDefault();
 
     handleCloseAllPopups();
     handleOpenLoginPopup();
+  };
+
+  const handleRegister = (evt) => {
+    evt.preventDefault();
+
+    handleCloseAllPopups();
+    handleOpenSuccessPopup();
   };
 
   return (
@@ -31,7 +38,7 @@ export function Register({ onClose, isOpen }) {
             Имя<input className="register__input" type="text" placeholder="Введите своё имя" minLength="2" maxLength="30" required></input>
             </label>
           </fieldset>
-          <button className="register__button">Зарегистрироваться</button>
+          <button className="register__button" onClick={handleRegister}>Зарегистрироваться</button>
           <div className="register__or">или <button onClick={handleSignIn} className="register__or-button">Войти</button></div>
       </form>
     </PopupWithForm>
