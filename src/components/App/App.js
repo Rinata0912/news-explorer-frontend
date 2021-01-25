@@ -7,8 +7,10 @@ import { PopupContext } from '../../contexts/PopupContext';
 import { Login } from '../Login/Login';
 import { Register } from '../Register/Register';
 import { Success } from '../Success/Success';
+import { ProtectedRoute } from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
+  const [isLogin, setIsLogin] = useState(true);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
@@ -46,11 +48,14 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Main />
+            <Main isLogin={isLogin} />
           </Route>
 
-          <Route exact path="/saved-news">
-            <SavedNews />
+          <ProtectedRoute exact path="/saved-news" isLogin={isLogin}>
+            <SavedNews isLogin={isLogin} />
+          </ProtectedRoute>
+          <Route >
+            
           </Route>
 
         </Switch>

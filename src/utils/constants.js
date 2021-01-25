@@ -1,7 +1,12 @@
 import { ReactComponent as Github } from '../images/github.svg';
 import { ReactComponent as Facebook } from '../images/fb.svg';
 
-const HEADER_NAVIGATION = ['Главная'];
+const HEADER_NAVIGATION = [
+  {
+    name: 'Главная',
+    path: '/',
+  },
+];
 const HEADER_NAVIGATION_AUTHORIZED = [
   {
     name: 'Главная',

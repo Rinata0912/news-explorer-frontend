@@ -4,11 +4,11 @@ import { Header } from '../Header/Header';
 import './Main.css';
 import { Results } from '../Results/Results';
 
-export function Main() {
+export function Main({ isLogin }) {
   return (
     <>
       <div className="main__banner">
-        <Header theme="light"/>
+        <Header theme="light" isLogin={isLogin} />
         <Search />
       </div>
       <Results />
