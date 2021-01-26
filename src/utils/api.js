@@ -107,11 +107,23 @@ class Api {
       .then(this._handleOriginalRes)
       .then((res) => res);
   }
+
+  checkToken(jwt) {
+    return fetch(`${this._options.baseUrl}/users/me`, {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${jwt}`,
+      },
+    })
+      .then(this._handleOriginalRes)
+      .then((res) => res);
+  }
 }
 
 const api = new Api({
   // baseUrl: `${window.location.protocol}//api.whatsthenews.students.nomoredomains.work`,
-  baseUrl: '/api',
+  baseUrl: '',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',

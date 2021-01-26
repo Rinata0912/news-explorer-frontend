@@ -7,11 +7,14 @@ import { ReactComponent as Menu } from '../../images/menu.svg';
 import { ReactComponent as Close } from '../../images/close.svg';
 import { ReactComponent as Logout} from '../../images/logout.svg';
 import { Button } from '../Button/Button';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 const IS_MOBILE = window.innerWidth < 768;
 
 export function Header({ isLogin, theme }) {
   const { handleOpenLoginPopup, isLoginPopupOpen, isRegisterPopupOpen } = useContext(PopupContext);
+  const currentUser = useContext(CurrentUserContext);
+  
   const [isCollapsed, setIsCollapsed] = useState(IS_MOBILE);
 
   const clickButton = (evt) => {
@@ -34,6 +37,8 @@ export function Header({ isLogin, theme }) {
     setIsCollapsed((prevState) => !prevState);
   };
 
+  console.log(currentUser)
+
   return (
     <div className={`header-wrapper ${!isCollapsed ? 'header-wrapper_collapsed' : ''}`}>
       <div className={`header header_theme_${theme} ${!isCollapsed ? `header_collapsed header_collapsed_theme_${theme}` : ''}`}>
@@ -47,7 +52,14 @@ export function Header({ isLogin, theme }) {
             <div className={`header__navigation ${!isCollapsed ? 'header__navigation_visible' : ''} header__navigation_theme_${theme}`}>
               <Navigation items={isLogin ? HEADER_NAVIGATION_AUTHORIZED : HEADER_NAVIGATION} theme={theme} highlightActiveLink />
               {/* <button onClick={clickButton} className={`header__button header__button_theme_${theme}`}>{isLogin ? <Logout/> : 'Авторизоваться'}</button> */}
-              <Button onClick={clickButton} theme={theme} value={isLogin ? <Logout className={`header__logout header__logout_theme_${theme}`}/> : 'Авторизоваться'}/>
+              <Button onClick={clickButton} theme={theme}>
+                {isLogin 
+                ? (<>
+                {currentUser.name} <Logout className={`header__logout header__logout_theme_${theme}`}/>
+                </>)
+                : 'Авторизоваться'}
+                
+              </Button>
             </div>
           </div>
         </div>

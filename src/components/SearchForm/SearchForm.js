@@ -6,7 +6,7 @@ export function SearchForm() {
     <form className="searchForm">
       <input className="searchForm__input" placeholder="Введите тему новости"></input>
       {/* <button className="searchForm__button">Искать</button> */}
-      <Button value="Искать" theme="form" />
+      <Button theme="form">Искать</Button>
     </form>
   );
 }

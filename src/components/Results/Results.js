@@ -11,7 +11,7 @@ export function Results() {
         <div className="results__news">
           <NewsCardList cardList={cardList} />
         </div>
-        <Button theme="normal" value="Показать еще" />
+        <Button theme="normal">Показать еще</Button>
       </div>
     </div>
   );
