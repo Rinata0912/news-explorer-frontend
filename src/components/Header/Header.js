@@ -37,8 +37,6 @@ export function Header({ isLogin, theme }) {
     setIsCollapsed((prevState) => !prevState);
   };
 
-  console.log(currentUser)
-
   return (
     <div className={`header-wrapper ${!isCollapsed ? 'header-wrapper_collapsed' : ''}`}>
       <div className={`header header_theme_${theme} ${!isCollapsed ? `header_collapsed header_collapsed_theme_${theme}` : ''}`}>

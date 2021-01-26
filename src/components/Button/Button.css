@@ -51,6 +51,18 @@
   opacity: .9;
 }
 
+.button_state_disabled, .button_state_disabled:hover {
+  color: #B6BCBF;
+  background-color: #E6E8EB;
+  opacity: 1;
+  cursor: default;
+}
+
+.button_type_fluid {
+  width: 100%;
+  justify-content: center;
+}
+
 @media (max-width: 1439px) {
   .button {
     padding: 8px 12px;
