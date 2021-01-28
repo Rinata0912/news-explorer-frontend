@@ -11,6 +11,12 @@ import { Success } from '../Success/Success';
 import { ProtectedRoute } from '../ProtectedRoute/ProtectedRoute';
 import { api } from '../../utils/api';
 
+let articlesFromStorage;
+try { 
+  articlesFromStorage = JSON.parse(localStorage.getItem('articles'));
+} catch(err) {}
+
+
 function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
@@ -18,13 +24,14 @@ function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
+  const [articles, setArticles] = useState(articlesFromStorage);
   const history = useHistory();
 
+  console.log(articles);
   useEffect(() => {
     api.getUserInfo()
       .then((userInfo) => {
         setCurrentUser(userInfo.data);
-        console.log(userInfo.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -114,7 +121,7 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Main isLogin={isLogin} />
+            <Main isLogin={isLogin} setArticles={setArticles} articles={articles} />
           </Route>
 
           <ProtectedRoute exact path="/saved-news" isLogin={isLogin}>

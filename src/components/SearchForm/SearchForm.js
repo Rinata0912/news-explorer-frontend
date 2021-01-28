@@ -2,15 +2,20 @@ import { Button } from '../Button/Button';
 import './SearchForm.css';
 import { useForm } from '../../utils/useForm';
 
-export function SearchForm() {
-  const { formValues, handleChange } = useForm({
+export function SearchForm({ onSearch }) {
+  const { formValues, handleChange, setFormValues } = useForm({
     keyword: '',
   });
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    console.log(formValues);
+    onSearch(formValues.keyword);
+
+    setFormValues({
+      ...formValues,
+      keyword: '',
+    });
   };
 
   return (

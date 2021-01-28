@@ -10,5 +10,5 @@ export function useForm(values) {
     });
   };
 
-  return { formValues, handleChange };
+  return { formValues, handleChange, setFormValues };
 }
