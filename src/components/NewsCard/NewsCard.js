@@ -16,7 +16,7 @@ export function NewsCard({ image, date, title, description, source, keyword, lin
   };
 
   return (
-    <div className="newsCard">
+    <a href={link} target="_blank" rel="noreferrer" className="newsCard">
       <div className="newsCard__keyword">{keyword}</div>
       <button onClick={saved ? handleDeleteArticle : handleSaveArticle} className={`newsCard__save ${saved ? 'newsCard__save_active' : ''}`}><Save className="newsCard__save-icon" /></button>
       <img className="newsCard__image" src={image} alt="картинка"/>
@@ -26,6 +26,6 @@ export function NewsCard({ image, date, title, description, source, keyword, lin
         <p className="newsCard__description">{description}</p>
         <div className="newsCard__source">{source}</div>
       </div>
-    </div>
+    </a>
   );
 }

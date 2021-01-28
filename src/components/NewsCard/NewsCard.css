@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  text-decoration: none;
 }
 
 .newsCard__save {
