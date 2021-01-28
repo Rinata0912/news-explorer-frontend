@@ -28,19 +28,6 @@ function App() {
   const [savedArticles, setSavedArticles] = useState([]);
   const history = useHistory();
 
-  // useEffect(() => {
-  //   api.getUserInfo()
-  //     .then((userInfo) => {
-  //       setCurrentUser(userInfo.data);
-  //       api.getSavedArticles()
-  //         .then((articles) => {
-  //           setSavedArticles(articles);
-  //         })
-  //         .catch((err) => console.log(err));
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
-
   const handleTokenCheck = useCallback(() => {
     const token = localStorage.getItem('jwt');
     if (token) {
@@ -137,6 +124,7 @@ function App() {
     link,
     image,
     id,
+    articleId,
   }) => {
     api.saveArticle({
       keyword,
@@ -147,9 +135,9 @@ function App() {
       link,
       image,
       id,
+      articleId,
     })
       .then((article) => {
-        console.log(article);
         setSavedArticles((prevState) => [
           article.data,
           ...prevState,
@@ -158,9 +146,23 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
+  const handleDeleteArticle = useCallback((id) => {
+    console.log(id);
+    api.removeArticle(id)
+      .then(() => {
+        setSavedArticles((prevState) => prevState.filter((item) => item._id !== id));
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   const articlesWithSaved = articles.map((article) => {
+    const savedArticle = savedArticles.find((savedArticle) => savedArticle.id === article.id) || {};
     console.log(savedArticles);
-    return {...article, saved: !!savedArticles.find((savedArticle) => savedArticle.id === article.id)};
+    return {
+      ...article,
+      saved: !!savedArticle.id,
+      savedArticleId: savedArticle._id
+    };
   });
 
   console.log(savedArticles);
@@ -172,7 +174,7 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Main isLogin={isLogin} setArticles={setArticles} articles={articlesWithSaved} onSaveArticle={handleSaveArticle} />
+            <Main isLogin={isLogin} setArticles={setArticles} articles={articlesWithSaved} onSaveArticle={handleSaveArticle} onDeleteArticle={handleDeleteArticle} />
           </Route>
 
           <ProtectedRoute exact path="/saved-news" isLogin={isLogin}>

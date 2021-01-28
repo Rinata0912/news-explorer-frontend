@@ -1,18 +1,24 @@
 import './NewsCard.css';
 import { ReactComponent as Save } from '../../images/bookmark.svg';
 
-export function NewsCard({ image, date, title, description, source, keyword, link, id, saved, onSaveArticle }) {
+export function NewsCard({ image, date, title, description, source, keyword, link, id, articleId, saved, onSaveArticle, onDeleteArticle }) {
 
   const handleSaveArticle = (evt) => {
     evt.preventDefault();
 
-    onSaveArticle({ image, date, title, text: description, source, keyword, link, id });
+    onSaveArticle({ image, date, title, text: description, source, keyword, link, id, articleId });
+  };
+
+  const handleDeleteArticle = (evt) => {
+    evt.preventDefault();
+
+    onDeleteArticle(articleId);
   };
 
   return (
     <div className="newsCard">
       <div className="newsCard__keyword">{keyword}</div>
-      <button onClick={handleSaveArticle} className={`newsCard__save ${saved ? 'newsCard__save_active' : ''}`}><Save className="newsCard__save-icon" /></button>
+      <button onClick={saved ? handleDeleteArticle : handleSaveArticle} className={`newsCard__save ${saved ? 'newsCard__save_active' : ''}`}><Save className="newsCard__save-icon" /></button>
       <img className="newsCard__image" src={image} alt="картинка"/>
       <div className="newsCard__content">
         <div className="newsCard__date">{date}</div>

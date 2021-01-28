@@ -35,6 +35,7 @@ class Api {
     link,
     image,
     id,
+    articleID,
   }) {
     return fetch(`${this._options.baseUrl}/articles`, {
       method: 'POST',
@@ -52,13 +53,14 @@ class Api {
         link,
         image,
         id,
+        articleID,
       }),
     })
       .then(this._handleOriginalRes)
       .then((res) => res);
   }
 
-  removeArticle({ id }) {
+  removeArticle(id) {
     return fetch(`${this._options.baseUrl}/articles/${id}`, {
       method: 'DELETE',
       headers: {

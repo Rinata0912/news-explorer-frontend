@@ -8,7 +8,7 @@ import { Preloader } from '../Preloader/Preloader';
 import { useState } from 'react';
 import { NoResults } from '../NoResults/NoResults';
 
-export function Main({ isLogin, setArticles, articles, onSaveArticle }) {
+export function Main({ isLogin, setArticles, articles, onSaveArticle, onDeleteArticle }) {
   const [isLoading, setIsLoading] = useState(false);
   const [noResults, setNoResults] = useState(false);
 
@@ -45,7 +45,7 @@ export function Main({ isLogin, setArticles, articles, onSaveArticle }) {
           isLoading && <div className="main__preloader"><Preloader /></div>
         }
         {
-          articles && !!articles.length && !isLoading && <Results articles={articles} onSaveArticle={onSaveArticle} />
+          articles && !!articles.length && !isLoading && <Results articles={articles} onSaveArticle={onSaveArticle} onDeleteArticle={onDeleteArticle} />
         }
         {
           noResults && <NoResults />
