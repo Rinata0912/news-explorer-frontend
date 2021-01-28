@@ -178,7 +178,7 @@ function App() {
           </Route>
 
           <ProtectedRoute exact path="/saved-news" isLogin={isLogin}>
-            <SavedNews isLogin={isLogin} />
+            <SavedNews isLogin={isLogin} savedArticles={savedArticles} onSaveArticle={handleSaveArticle} onDeleteArticle={handleDeleteArticle} />
           </ProtectedRoute>
           <Route >
             
