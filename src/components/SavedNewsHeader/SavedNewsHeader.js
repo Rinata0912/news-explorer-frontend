@@ -2,15 +2,19 @@ import { useContext } from 'react';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import './SavedNewsHeader.css';
 
+const renderKeyword = (keyword) => {
+  return <span className="savedNewsHeader__keyword">{keyword}</span>;
+};
+
 const renderKeywords = (keywords) => {
   if(keywords.length > 3) {
-    return `${keywords[0]}, ${keywords[1]} и ${keywords.length - 2} другим`;
+    return <>{renderKeyword(keywords[0])}, {renderKeyword(keywords[1])} и {renderKeyword(`${keywords.length - 2}  другим`)}</>;
   } else if(keywords.length === 3) {
-    return `${keywords[0]}, ${keywords[1]} и ${keywords[2]}`;
+    return <>{renderKeyword(keywords[0])}, {renderKeyword(keywords[1])} и {renderKeyword(keywords[2])}</>;
   } else if(keywords.length === 2){
-    return `${keywords[0]} и ${keywords[1]}`;
+    return <>{renderKeyword(keywords[0])} и {renderKeyword(keywords[1])}</>;
   } else {
-    return keywords;
+    return <>{renderKeyword(keywords)}</>;
   }
 };
 
@@ -26,7 +30,7 @@ export function SavedNewsHeader({ keywords, articleCount }) {
           `${currentUser.name}, у вас ${articleCount} сохранённых статей`
         }</h1>
         <div className="savedNewsHeader__keywords">
-          {`По ключевым словам: ${renderKeywords(keywords)}`}
+          По ключевым словам: {renderKeywords(keywords)}
         </div>
       </div>
     </div>

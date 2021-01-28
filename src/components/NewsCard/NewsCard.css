@@ -39,24 +39,25 @@
 }
 
 .newsCard__save_active .newsCard__save-icon {
-  stroke: #2F71E5;
+  color: #2F71E5;
   fill: #2F71E5;
 }
 
 .newsCard__save-icon {
-  stroke: #B6BCBF;
+  color: #B6BCBF;
   fill: none;
-  transition: stroke .4s ease;
+  transition: color .4s ease;
 }
 
 .newsCard__save:hover .newsCard__save-icon {
-  stroke: #1A1B22;
+  color: #1A1B22;
   fill: none;
 }
 
 .newsCard__image {
   max-height: 272px;
   height: 100%;
+  object-fit: cover;
 }
 
 .newsCard__content {

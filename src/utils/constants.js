@@ -41,4 +41,6 @@ const FOOTER_SOCIAL = [
 
 const DARK_COLOR = '#1A1B22';
 
-export { HEADER_NAVIGATION, HEADER_NAVIGATION_AUTHORIZED, FOOTER_NAVIGATION, DARK_COLOR, FOOTER_SOCIAL };
+const MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+
+export { HEADER_NAVIGATION, HEADER_NAVIGATION_AUTHORIZED, FOOTER_NAVIGATION, DARK_COLOR, FOOTER_SOCIAL, MONTHS };
