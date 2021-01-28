@@ -8,7 +8,7 @@ import { Preloader } from '../Preloader/Preloader';
 import { useState } from 'react';
 import { NoResults } from '../NoResults/NoResults';
 
-export function Main({ isLogin, setArticles, articles }) {
+export function Main({ isLogin, setArticles, articles, onSaveArticle }) {
   const [isLoading, setIsLoading] = useState(false);
   const [noResults, setNoResults] = useState(false);
 
@@ -20,6 +20,7 @@ export function Main({ isLogin, setArticles, articles }) {
         const articles = data.articles.map((article) => {
           return {
             ...article,
+            id: article.title + article.publishedAt,
             keyword,
           };
         });
@@ -44,7 +45,7 @@ export function Main({ isLogin, setArticles, articles }) {
           isLoading && <div className="main__preloader"><Preloader /></div>
         }
         {
-          articles && !!articles.length && !isLoading && <Results articles={articles} />
+          articles && !!articles.length && !isLoading && <Results articles={articles} onSaveArticle={onSaveArticle} />
         }
         {
           noResults && <NoResults />

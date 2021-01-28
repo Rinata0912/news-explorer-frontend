@@ -26,7 +26,7 @@ class Api {
       .then((res) => res);
   }
 
-  addArticle({
+  saveArticle({
     keyword,
     title,
     text,
@@ -34,6 +34,7 @@ class Api {
     source,
     link,
     image,
+    id,
   }) {
     return fetch(`${this._options.baseUrl}/articles`, {
       method: 'POST',
@@ -50,6 +51,7 @@ class Api {
         source,
         link,
         image,
+        id,
       }),
     })
       .then(this._handleOriginalRes)

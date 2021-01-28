@@ -25,23 +25,29 @@ function App() {
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
   const [articles, setArticles] = useState(articlesFromStorage);
+  const [savedArticles, setSavedArticles] = useState([]);
   const history = useHistory();
 
-  console.log(articles);
-  useEffect(() => {
-    api.getUserInfo()
-      .then((userInfo) => {
-        setCurrentUser(userInfo.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   api.getUserInfo()
+  //     .then((userInfo) => {
+  //       setCurrentUser(userInfo.data);
+  //       api.getSavedArticles()
+  //         .then((articles) => {
+  //           setSavedArticles(articles);
+  //         })
+  //         .catch((err) => console.log(err));
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   const handleTokenCheck = useCallback(() => {
     const token = localStorage.getItem('jwt');
     if (token) {
       api.checkToken(token)
-        .then((res) => {
-          if (res) {
+        .then((userInfo) => {
+          if (userInfo) {
+            setCurrentUser(userInfo.data);
             setIsLogin(true);
             history.push('/');
           }
@@ -49,6 +55,14 @@ function App() {
         .catch((err) => err);
     }
   }, [history]);
+
+  useEffect(() => {
+    if(isLogin) {
+      api.getSavedArticles()
+        .then((savedArticles) => setSavedArticles(savedArticles.data))
+        .catch((err) => console.log(err));
+    }
+  }, [isLogin]);
 
   useEffect(() => {
     handleTokenCheck();
@@ -114,6 +128,43 @@ function App() {
       });
   }, [history]);
 
+  const handleSaveArticle = useCallback(({ 
+    keyword,
+    title,
+    text,
+    date,
+    source,
+    link,
+    image,
+    id,
+  }) => {
+    api.saveArticle({
+      keyword,
+      title,
+      text,
+      date,
+      source,
+      link,
+      image,
+      id,
+    })
+      .then((article) => {
+        console.log(article);
+        setSavedArticles((prevState) => [
+          article.data,
+          ...prevState,
+        ])
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const articlesWithSaved = articles.map((article) => {
+    console.log(savedArticles);
+    return {...article, saved: !!savedArticles.find((savedArticle) => savedArticle.id === article.id)};
+  });
+
+  console.log(savedArticles);
+
   return (
   <CurrentUserContext.Provider value={currentUser}>
     <PopupContext.Provider value={popupContext}>
@@ -121,7 +172,7 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Main isLogin={isLogin} setArticles={setArticles} articles={articles} />
+            <Main isLogin={isLogin} setArticles={setArticles} articles={articlesWithSaved} onSaveArticle={handleSaveArticle} />
           </Route>
 
           <ProtectedRoute exact path="/saved-news" isLogin={isLogin}>
