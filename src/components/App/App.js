@@ -19,7 +19,6 @@ try {
 
 function App() {
   const [isLogin, setIsLogin] = useState(false);
-  const [isRegister, setIsRegister] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
@@ -39,7 +38,7 @@ function App() {
             history.push('/');
           }
         })
-        .catch((err) => err);
+        .catch((err) => console.log(err));
     }
   }, [history]);
 
@@ -87,13 +86,9 @@ function App() {
       .signUp(userData)
       .then(() => {
         history.push('/');
-        setIsRegister(true);
         handleOpenSuccessPopup();
       })
-      .catch((err) => {
-        console.log(err);
-        setIsRegister(false);
-      });
+      .catch((err) => console.log(err));
   }, [handleOpenSuccessPopup, history]);
 
   const handleLogin = useCallback((userData) => {
@@ -109,10 +104,7 @@ function App() {
           })
           .catch((err) => err);
       })
-      .catch((err) => {
-        console.log(err);
-        setIsRegister(false);
-      });
+      .catch((err) => console.log(err));
   }, [history]);
 
   const handleSaveArticle = useCallback(({ 
@@ -147,7 +139,6 @@ function App() {
   }, []);
 
   const handleDeleteArticle = useCallback((id) => {
-    console.log(id);
     api.removeArticle(id)
       .then(() => {
         setSavedArticles((prevState) => prevState.filter((item) => item._id !== id));
@@ -157,15 +148,12 @@ function App() {
 
   const articlesWithSaved = articles.map((article) => {
     const savedArticle = savedArticles.find((savedArticle) => savedArticle.id === article.id) || {};
-    console.log(savedArticles);
     return {
       ...article,
       saved: !!savedArticle.id,
       savedArticleId: savedArticle._id
     };
   });
-
-  console.log(savedArticles);
 
   return (
   <CurrentUserContext.Provider value={currentUser}>

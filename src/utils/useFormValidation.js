@@ -17,8 +17,6 @@ export function useFormValidation(values) {
       [name]: validationMessage,
     })
 
-    console.log(validationMessage);
-
     setIsValid(target.closest("form").checkValidity());
   };
 

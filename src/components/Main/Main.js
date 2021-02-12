@@ -11,6 +11,7 @@ import { NoResults } from '../NoResults/NoResults';
 export function Main({ isLogin, setArticles, articles, onSaveArticle, onDeleteArticle }) {
   const [isLoading, setIsLoading] = useState(false);
   const [noResults, setNoResults] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSearch = (keyword) => {
     setNoResults(false);
@@ -30,7 +31,10 @@ export function Main({ isLogin, setArticles, articles, onSaveArticle, onDeleteAr
           localStorage.setItem('articles', JSON.stringify(articles));
         } catch(err) {}
       })
-      .catch((err) => console.log(err))
+      .catch((err) => {
+        setError(true);
+        console.log(err);
+      })
       .finally(() => setIsLoading(false));
   };
 
@@ -48,8 +52,12 @@ export function Main({ isLogin, setArticles, articles, onSaveArticle, onDeleteAr
           articles && !!articles.length && !isLoading && <Results articles={articles} onSaveArticle={onSaveArticle} onDeleteArticle={onDeleteArticle} />
         }
         {
-          noResults && <NoResults />
+          noResults && <NoResults empty />
         }
+        {
+          error && <NoResults error />
+        }
+        {}
       </div>
       
       <About />
