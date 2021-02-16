@@ -11,7 +11,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 const IS_MOBILE = window.innerWidth < 768;
 
-export function Header({ isLogin, theme }) {
+export function Header({ isLogin, theme, onLogout }) {
   const { handleOpenLoginPopup, isLoginPopupOpen, isRegisterPopupOpen } = useContext(PopupContext);
   const currentUser = useContext(CurrentUserContext);
   
@@ -29,7 +29,7 @@ export function Header({ isLogin, theme }) {
     }
 
     if(buttonType === 'logout') {
-      console.log('logout');
+      onLogout();
     }
   };
 

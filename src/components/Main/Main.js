@@ -8,7 +8,7 @@ import { Preloader } from '../Preloader/Preloader';
 import { useState } from 'react';
 import { NoResults } from '../NoResults/NoResults';
 
-export function Main({ isLogin, setArticles, articles, onSaveArticle, onDeleteArticle }) {
+export function Main({ onLogout, isLogin, setArticles, articles, onSaveArticle, onDeleteArticle }) {
   const [isLoading, setIsLoading] = useState(false);
   const [noResults, setNoResults] = useState(false);
   const [error, setError] = useState(false);
@@ -41,7 +41,7 @@ export function Main({ isLogin, setArticles, articles, onSaveArticle, onDeleteAr
   return (
     <>
       <div className="main__banner">
-        <Header theme="light" isLogin={isLogin} />
+        <Header theme="light" isLogin={isLogin} onLogout={onLogout} />
         <Search setArticles={setArticles} onSearch={handleSearch} />
       </div>
       <div className="main__results">

@@ -86,26 +86,21 @@ function App() {
       .signUp(userData)
       .then(() => {
         history.push('/');
+        handleCloseAllPopups();
         handleOpenSuccessPopup();
       })
       .catch((err) => console.log(err));
-  }, [handleOpenSuccessPopup, history]);
+  }, [handleOpenSuccessPopup, handleCloseAllPopups, history]);
 
   const handleLogin = useCallback((userData) => {
     api
       .signIn(userData)
       .then((res) => {
         localStorage.setItem('jwt', res.token);
-        api
-          .checkToken(res.token)
-          .then(() => {
-            setIsLogin(true);
-            history.push('/');
-          })
-          .catch((err) => err);
+        handleTokenCheck();
       })
       .catch((err) => console.log(err));
-  }, [history]);
+  }, [handleTokenCheck]);
 
   const handleSaveArticle = useCallback(({ 
     keyword,
@@ -155,6 +150,12 @@ function App() {
     };
   });
 
+  const handleLogout = useCallback(() => {
+    localStorage.removeItem('jwt');
+    setIsLogin(false);
+    setCurrentUser({});
+  }, []);
+
   return (
   <CurrentUserContext.Provider value={currentUser}>
     <PopupContext.Provider value={popupContext}>
@@ -162,11 +163,11 @@ function App() {
         <Switch>
 
           <Route exact path="/">
-            <Main isLogin={isLogin} setArticles={setArticles} articles={articlesWithSaved} onSaveArticle={handleSaveArticle} onDeleteArticle={handleDeleteArticle} />
+            <Main onLogout={handleLogout} isLogin={isLogin} setArticles={setArticles} articles={articlesWithSaved} onSaveArticle={handleSaveArticle} onDeleteArticle={handleDeleteArticle} />
           </Route>
 
           <ProtectedRoute exact path="/saved-news" isLogin={isLogin}>
-            <SavedNews isLogin={isLogin} savedArticles={savedArticles} onSaveArticle={handleSaveArticle} onDeleteArticle={handleDeleteArticle} />
+            <SavedNews onLogout={handleLogout} isLogin={isLogin} savedArticles={savedArticles} onSaveArticle={handleSaveArticle} onDeleteArticle={handleDeleteArticle} />
           </ProtectedRoute>
           <Route >
             
