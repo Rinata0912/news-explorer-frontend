@@ -54,6 +54,46 @@
   fill: none;
 }
 
+.newsCard__delete-icon {
+  color: #B6BCBF;
+  fill: none;
+  transition: color .4s ease;
+}
+
+.newsCard__save:hover .newsCard__delete-icon {
+  color: #1A1B22;
+  fill: none;
+}
+
+.newsCard__hint {
+  position: absolute;
+  font-size: 10px;
+  padding: 15px 0;
+  font-weight: 500;
+  font-family: 'Roboto';
+  line-height: 12px;
+  color: #000;
+  bottom: 0;
+  top: 0;
+  border-radius: 10px;
+  background-color: #fff;
+  display: none;
+}
+
+.newsCard__hint_size_s {
+  left: -164px;
+  right: 45px;
+}
+
+.newsCard__hint_size_m {
+  left: -187px;
+  right: 45px;
+}
+
+.newsCard__save:hover .newsCard__hint {
+  display: block;
+}
+
 .newsCard__image {
   max-height: 272px;
   height: 100%;

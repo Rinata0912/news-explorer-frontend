@@ -13,7 +13,7 @@ export function SavedNews({ onLogout, isLogin, savedArticles, onDeleteArticle })
       <Header theme="dark" isLogin={isLogin} onLogout={onLogout} />
       <SavedNewsHeader keywords={keywordList} articleCount={savedArticles.length} />
       <div className="savedNews__cardlist">
-        <NewsCardList inSavedNews cardList={savedArticles} onDeleteArticle={onDeleteArticle} />
+        <NewsCardList isLogin={isLogin} inSavedNews cardList={savedArticles} onDeleteArticle={onDeleteArticle} />
       </div>
     </div>
   );

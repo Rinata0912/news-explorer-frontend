@@ -49,7 +49,7 @@ export function Main({ onLogout, isLogin, setArticles, articles, onSaveArticle, 
           isLoading && <div className="main__preloader"><Preloader /></div>
         }
         {
-          articles && !!articles.length && !isLoading && <Results articles={articles} onSaveArticle={onSaveArticle} onDeleteArticle={onDeleteArticle} />
+          articles && !!articles.length && !isLoading && <Results isLogin={isLogin} articles={articles} onSaveArticle={onSaveArticle} onDeleteArticle={onDeleteArticle} />
         }
         {
           noResults && <NoResults empty />

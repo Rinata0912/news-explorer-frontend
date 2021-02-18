@@ -1,12 +1,13 @@
 import './NewsCardList.css';
 import { NewsCard } from '../NewsCard/NewsCard';
 
-export function NewsCardList({ cardList, onSaveArticle, onDeleteArticle, inSavedNews }) {
+export function NewsCardList({ isLogin, cardList, onSaveArticle, onDeleteArticle, inSavedNews }) {
   return (
     <div className="newsCardList">
       {
         cardList.map((card) => {
           return <NewsCard 
+            isLogin={isLogin}
             inSavedNews={inSavedNews}
             key={card.id}
             image={card.urlToImage || card.image}
