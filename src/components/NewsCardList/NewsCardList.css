@@ -1,0 +1,27 @@
+.newsCardList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1232px;
+  background-color: #F5F6F7;
+  margin: 0 auto
+}
+
+.newsCardList__item {
+  display: flex;
+}
+
+@media (max-width: 1439px) {
+  .newsCardList {
+    gap: 8px;
+    max-width: 688px;
+  }
+}
+
+@media (max-width: 767px) {
+  .newsCardList {
+    gap: 9px;
+    max-width: 288px;
+    grid-template-columns: 1fr;
+  }
+}

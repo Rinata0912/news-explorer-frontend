@@ -1,0 +1,168 @@
+.newsCard {
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 579px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.newsCard__save {
+  border: none;
+  padding: 8px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 0;
+  line-height: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.newsCard__keyword {
+  color: #000;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  font-style: normal;
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.newsCard__save_active .newsCard__save-icon {
+  stroke: #2F71E5;
+  fill: #2F71E5;
+}
+
+.newsCard__save-icon {
+  stroke: #B6BCBF;
+  fill: none;
+  transition: stroke .4s ease;
+}
+
+.newsCard__save:hover .newsCard__save-icon {
+  stroke: #1A1B22;
+  fill: none;
+}
+
+.newsCard__image {
+  max-height: 272px;
+  height: 100%;
+}
+
+.newsCard__content {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.newsCard__date {
+  font-family: 'Source Sans Pro';
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  font-style: normal;
+  color: #B6BCBF;
+  margin-bottom: 12px;
+}
+
+.newsCard__title {
+  font-family: 'Roboto Slab';
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 400;
+  font-style: normal;
+  color: #1A1B22;
+  margin: 0 0 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.newsCard__description {
+  font-family: 'Roboto';
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  font-style: normal;
+  color: #1A1B22;
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
+.newsCard__source {
+  font-family: 'Roboto Slab';
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-style: normal;
+  color: #B6BCBF;
+  margin-top: auto;
+}
+
+@media (max-width: 1439px) {
+  .newsCard {
+    max-width: 224px;
+    height: 420px;
+  }
+
+  .newsCard__content {
+    padding: 16px;
+  }
+
+  .newsCard__save {
+    top: 8px;
+    right: 8px;
+  }
+
+  .newsCard__image {
+    max-height: 150px;
+  }
+
+  .newsCard__title {
+    font-size: 22px;
+    line-height: 24px;
+    margin: 0 0 10px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .newsCard {
+    max-width: 288px;
+    height: 430px;
+  }
+
+  .newsCard__image {
+    max-height: 196px;
+  }
+
+  .newsCard__save {
+    top: 16px;
+    right: 16px;
+  }
+
+  .newsCard__date {
+    margin-bottom: 10px;
+  }
+
+  .newsCard__title {
+    line-height: 28px;
+  }
+}
