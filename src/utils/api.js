@@ -126,7 +126,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: `${window.location.protocol}//api.whatsthenews.students.nomoredomains.work`,
+  baseUrl: `${window.location.protocol}//api.allnews.students.nomoredomains.work`,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
