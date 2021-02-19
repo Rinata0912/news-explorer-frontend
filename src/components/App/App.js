@@ -23,7 +23,7 @@ function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isSuccessPopupOpen, setIsSuccessPopupOpen] = useState(false);
-  const [articles, setArticles] = useState(articlesFromStorage);
+  const [articles, setArticles] = useState(articlesFromStorage || []);
   const [savedArticles, setSavedArticles] = useState([]);
   const history = useHistory();
 
