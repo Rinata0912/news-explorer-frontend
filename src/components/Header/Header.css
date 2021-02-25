@@ -44,34 +44,6 @@
   display: flex;
 }
 
-.header__button {
-  border-width: 1px;
-  border-radius: 100px;
-  padding: 12px 15px;
-  background: none;
-  cursor: pointer;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 24px;
-  align-self: center;
-  transition: opacity .2s ease;
-}
-
-.header__button:hover {
-  opacity: .4;
-}
-
-.header__button_theme_light {
-  color: #fff;
-  border-color: #fff;
-}
-
-.header__button_theme_dark {
-  color: #1A1B22;
-  border-color: #1A1B22;
-}
-
 .header__toggle-content {
   background: none;
   border: none;
@@ -87,6 +59,18 @@
 }
 
 .header__toggle-content-icon_theme_dark{
+  fill: #1A1B22;
+}
+
+.header__logout {
+  margin-left: 8px;
+}
+
+.header__logout_theme_light {
+  fill: #fff;
+}
+
+.header__logout_theme_dark {
   fill: #1A1B22;
 }
 

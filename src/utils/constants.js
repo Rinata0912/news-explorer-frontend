@@ -1,7 +1,12 @@
 import { ReactComponent as Github } from '../images/github.svg';
 import { ReactComponent as Facebook } from '../images/fb.svg';
 
-const HEADER_NAVIGATION = ['Главная'];
+const HEADER_NAVIGATION = [
+  {
+    name: 'Главная',
+    path: '/',
+  },
+];
 const HEADER_NAVIGATION_AUTHORIZED = [
   {
     name: 'Главная',
@@ -36,4 +41,6 @@ const FOOTER_SOCIAL = [
 
 const DARK_COLOR = '#1A1B22';
 
-export { HEADER_NAVIGATION, HEADER_NAVIGATION_AUTHORIZED, FOOTER_NAVIGATION, DARK_COLOR, FOOTER_SOCIAL };
+const MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+
+export { HEADER_NAVIGATION, HEADER_NAVIGATION_AUTHORIZED, FOOTER_NAVIGATION, DARK_COLOR, FOOTER_SOCIAL, MONTHS };
